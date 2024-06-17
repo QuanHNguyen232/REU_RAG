@@ -1,5 +1,7 @@
 import express from "express";
 import {config} from "dotenv";
+import morgan from "morgan";
+import appRouter from "./routes/index.js";
 
 config();
 
@@ -7,5 +9,11 @@ const app = express();
 
 // middlewares
 app.use(express.json());
+
+// remove in production
+app.use(morgan("dev"));
+
+// once move to this /api/v1 endpoint, the request is transfered to appRouter 
+app.use("/api/v1", appRouter);
 
 export default app;
