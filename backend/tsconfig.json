@@ -6,13 +6,6 @@
       "sourceMap": true,
       "outDir": "dist",
       "allowSyntheticDefaultImports": true,
-    //   from https://medium.com/@brailyguzman/mern-typescript-setup-guide-af1500100d4b
-      "jsx": "preserve",
-      "allowJs": true,
-      "esModuleInterop": true,
-      "forceConsistentCasingInFileNames": true,
-      "strict": true,
-      "skipLibCheck": true
     },
     "include": ["src/**/*.ts", "src/index.ts"]
   }
