@@ -17,9 +17,13 @@ export const validate = (validations: ValidationChain[]) => {
         return res.status(422).json({ errors: errors.array() });
     };
 };
-  
-export const signupValidator = [
-    body("name").notEmpty().withMessage("Name is required."), // if name is empty, appear message
+
+export const loginValidator = [
     body("email").trim().isEmail().withMessage("Email is required."),
     body("password").trim().isLength({min: 6}).withMessage("Password should have at least 6 characters."),
+];
+
+export const signupValidator = [
+    body("name").notEmpty().withMessage("Name is required."), // if name is empty, appear message
+    ...loginValidator,
 ];
