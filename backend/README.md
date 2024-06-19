@@ -1,6 +1,7 @@
 # Backend
 
-Done until 31:31 ([tutorial](https://youtu.be/wrHTcjSZQ1Y))
+***NOTE***: when deploy, need to change:
+1. `domain` in `res.cookie("auth_token", token, {path: "/", domain: "localhost"});`, in [user-controllers.ts](./src/controllers/user-controllers.ts)
 
 Start project:
 1. Initialize the project using command, which generates `package.json`:
