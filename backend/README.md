@@ -4,19 +4,25 @@
 1. `domain` in `res.cookie("auth_token", token, {path: "/", domain: "localhost"});`, in [user-controllers.ts](./src/controllers/user-controllers.ts)
 
 Start project:
-1. Initialize the project using command, which generates `package.json`:
-    ```bash
-    npm init --yes
-    ```
-1. Following this [Medium](https://medium.com/@brailyguzman/mern-typescript-setup-guide-af1500100d4b)
-    * Use this command to install dependencies:
+* First time:
+    1. Initialize the project using command, which generates `package.json`:
         ```bash
-        npm install bcrypt concurrently cookie-parser cors dotenv express express-validator jsonwebtoken mongoose openai
+        npm init --yes
         ```
-    * Use this to install typescript dependencies:
+    1. Following this [Medium](https://medium.com/@brailyguzman/mern-typescript-setup-guide-af1500100d4b)
+        * Use this command to install dependencies:
+            ```bash
+            npm install bcrypt concurrently cookie-parser cors dotenv express express-validator jsonwebtoken mongoose openai
+            ```
+        * Use this to install typescript dependencies:
+            ```bash
+            npm install -D @types/bcrypt @types/cookie-parser @types/cors @types/express @types/jsonwebtoken @types/node nodemon ts-node typescript
+            ```
+        Those commands above will auto update the `package.json` file.
+        
+        ***NOTE***: later, after having `package.json` file, just use `npm install`.
+* Second time and afterwards:
+    1. Just run:
         ```bash
-        npm install -D @types/bcrypt @types/cookie-parser @types/cors @types/express @types/jsonwebtoken @types/node nodemon ts-node typescript
+        npm run dev
         ```
-    Those commands above will auto update the `package.json` file.
-    
-    ***NOTE***: later, after having `package.json` file, just use `npm install`.
