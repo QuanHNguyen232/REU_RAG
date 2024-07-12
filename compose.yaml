@@ -11,15 +11,19 @@
 version: '3'
 
 services:
-  # server:
-  #   build: ./backend
-  #   ports:
-  #     - 5000:5000
+  server:
+    build: ./backend
+    ports:
+      - 5000:5000
+    volumes:
+      - ./backend/src:/app/src
 
   client:
     build: ./frontend
     ports:
       - 5173:5173
+    volumes:
+      - ./frontend/src:/app/src
 
 # The commented out section below is an example of how to define a PostgreSQL
 # database that your application can use. `depends_on` tells Docker Compose to
